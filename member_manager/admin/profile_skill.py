@@ -12,7 +12,7 @@ class ProfileSkillAdmin(TimestampActiveAdmin):
     fields = ['profile', 'skill', 'created', 'created_by', 'modified',
               'modified_by']
     list_display = ['profile', 'skill']
-    list_filter = ['profile', 'skill']
+    list_filter = ['skill']
     ordering = ['profile', 'skill']
     readonly_fields = ['created', 'created_by', 'modified', 'modified_by']
     search_fields = ['profile__last_name', 'profile__first_name',
