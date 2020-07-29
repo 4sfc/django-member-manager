@@ -20,6 +20,11 @@ class AvailabilityForm(forms.ModelForm):
         model = Availability
 
     def clean(self):
+        '''
+        Clean form data and verify start to end times are a valid period.
+
+        :raises forms.ValidationError: Invalid start-to-end period
+        '''
         cleaned_data = super().clean()
         try:
             valid = mmu.valid_period(cleaned_data.get('start_time', None),

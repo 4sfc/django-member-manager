@@ -10,6 +10,11 @@ class AvailabilityInlineFormSet(BaseInlineFormSet):
     '''AvailabilityInlineFormSet has a custom clean function'''
 
     def clean(self):
+        '''
+        Clean form data and verify start to end times are a valid period.
+
+        :raises forms.ValidationError: Invalid start-to-end period
+        '''
         super().clean()
         for form in self.forms:
             if not form.is_valid():
