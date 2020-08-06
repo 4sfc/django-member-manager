@@ -1,4 +1,4 @@
-'''ProfileAdmin class'''
+"""ProfileAdmin class"""
 
 from django.contrib import admin
 
@@ -7,9 +7,10 @@ from member_manager.admin.availability_inline import AvailabilityInline
 from member_manager.admin.profile_skill_inline import ProfileSkillInline
 from member_manager.models.profile import Profile
 
+
 @admin.register(Profile)
 class ProfileAdmin(TimestampAdmin):
-    '''ProfileAdmin shows profile, availability, and skill data'''
+    """ProfileAdmin shows profile, availability, and skill data"""
 
     fields = ['last_name', 'first_name', 'user', 'active', 'pronouns',
               'email', 'phone', 'joined', 'notes', 'created', 'created_by',

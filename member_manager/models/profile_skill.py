@@ -1,4 +1,4 @@
-'''ProfileSkill class'''
+"""ProfileSkill class"""
 
 from django.db import models
 
@@ -6,8 +6,9 @@ from common_files.models.timestamp import Timestamp
 from member_manager.models.profile import Profile
 from member_manager.models.skill import Skill
 
+
 class ProfileSkill(Timestamp):
-    '''ProfileSkill has profile and skill fields'''
+    """ProfileSkill has profile and skill fields"""
 
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     skill = models.ForeignKey(Skill, on_delete=models.CASCADE)

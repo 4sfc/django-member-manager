@@ -1,9 +1,10 @@
-'''Skill class'''
+"""Skill class"""
 
 from common_files.models.base import Base
 
+
 class Skill(Base):
-    '''Skill has label, value, and active fields'''
+    """Skill has label, value, and active fields"""
 
     class Meta:
         app_label = 'member_manager'

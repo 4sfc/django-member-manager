@@ -1,4 +1,4 @@
-'''AvailabilityAdmin class'''
+"""AvailabilityAdmin class"""
 
 from django.contrib import admin
 
@@ -7,9 +7,10 @@ from common_files.filters.start_time import StartTimeListFilter
 from member_manager.forms.availability import AvailabilityForm
 from member_manager.models.availability import Availability
 
+
 @admin.register(Availability)
 class AvailabilityAdmin(TimestampAdmin):
-    '''AvailabilityAdmin inherits from TimestampAdmin'''
+    """AvailabilityAdmin inherits from TimestampAdmin"""
 
     fields = ['profile', 'weekday', 'start_time', 'end_time',
               'created', 'created_by', 'modified', 'modified_by']

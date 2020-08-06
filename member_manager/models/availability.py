@@ -1,12 +1,13 @@
-'''Availability class'''
+"""Availability class"""
 
 from django.db import models
 
 from common_files.models.timestamp_weekday_hour import TimestampWeekdayHour
 from member_manager.models.profile import Profile
 
+
 class Availability(TimestampWeekdayHour):
-    '''Availability has profile, weekday, start and end times'''
+    """Availability has profile, weekday, start and end times"""
 
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
