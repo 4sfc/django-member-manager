@@ -1,4 +1,4 @@
-'''AvailabilityInlineFormSet class'''
+"""AvailabilityInlineFormSet class"""
 
 from django import forms
 from django.forms.models import BaseInlineFormSet
@@ -6,15 +6,16 @@ from django.forms.models import BaseInlineFormSet
 from member_manager.forms.availability import AvailabilityForm as af
 from member_manager.utils import MemberManagerUtils as mmu
 
+
 class AvailabilityInlineFormSet(BaseInlineFormSet):
-    '''AvailabilityInlineFormSet has a custom clean function'''
+    """AvailabilityInlineFormSet has a custom clean function"""
 
     def clean(self):
-        '''
+        """
         Clean form data and verify start to end times are a valid period.
 
         :raises forms.ValidationError: Invalid start-to-end period
-        '''
+        """
         super().clean()
         for form in self.forms:
             if not form.is_valid():

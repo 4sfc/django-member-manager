@@ -1,4 +1,4 @@
-'''AvailabilityForm class'''
+"""AvailabilityForm class"""
 
 from django import forms
 from django.utils.translation import gettext as _
@@ -6,8 +6,9 @@ from django.utils.translation import gettext as _
 from member_manager.models.availability import Availability
 from member_manager.utils import MemberManagerUtils as mmu
 
+
 class AvailabilityForm(forms.ModelForm):
-    '''AvailabilityForm adds a custom clean function'''
+    """AvailabilityForm adds a custom clean function"""
 
     INVALID_PRD = _('Start to end must be a %(hours)s hour and %(minutes)s '
                     'minute period.')
@@ -20,11 +21,11 @@ class AvailabilityForm(forms.ModelForm):
         model = Availability
 
     def clean(self):
-        '''
+        """
         Clean form data and verify start to end times are a valid period.
 
         :raises forms.ValidationError: Invalid start-to-end period
-        '''
+        """
         cleaned_data = super().clean()
         try:
             valid = mmu.valid_period(cleaned_data.get('start_time', None),

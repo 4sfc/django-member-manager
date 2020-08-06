@@ -1,4 +1,4 @@
-'''MemberManager models'''
+"""MemberManager models"""
 
 from member_manager.models.availability import Availability
 from member_manager.models.profile import Profile

@@ -1,4 +1,4 @@
-'''AvailabilityInline class'''
+"""AvailabilityInline class"""
 
 from django.contrib import admin
 
@@ -7,8 +7,9 @@ from member_manager.forms.availability_inline_formset import (
 )
 from member_manager.models.availability import Availability
 
+
 class AvailabilityInline(admin.TabularInline):
-    '''AvailabilityInline inherits from TabularInline'''
+    """AvailabilityInline inherits from TabularInline"""
 
     model = Availability
     formset = AvailabilityInlineFormSet

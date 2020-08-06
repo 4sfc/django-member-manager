@@ -1,12 +1,13 @@
-'''Profile class'''
+"""Profile class"""
 
 from django.contrib.auth.models import User
 from django.db import models
 
 from common_files.models.timestamp import Timestamp
 
+
 class Profile(Timestamp):
-    '''Profile has first, last, email, pronouns, and phone fields'''
+    """Profile has first, last, email, pronouns, and phone fields"""
 
     first_name = models.CharField(db_index=True, max_length=191)
     last_name = models.CharField(db_index=True, max_length=191)

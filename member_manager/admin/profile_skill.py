@@ -1,13 +1,14 @@
-'''ProfileSkillAdmin class'''
+"""ProfileSkillAdmin class"""
 
 from django.contrib import admin
 
 from common_files.admin.timestamp_active import TimestampActiveAdmin
 from member_manager.models.profile_skill import ProfileSkill
 
+
 @admin.register(ProfileSkill)
 class ProfileSkillAdmin(TimestampActiveAdmin):
-    '''ProfileSkillAdmin imports from TimestampActiveAdmin'''
+    """ProfileSkillAdmin imports from TimestampActiveAdmin"""
 
     fields = ['profile', 'skill', 'created', 'created_by', 'modified',
               'modified_by']

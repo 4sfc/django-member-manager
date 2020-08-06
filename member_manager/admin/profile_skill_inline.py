@@ -1,10 +1,11 @@
-'''ProfileSkill class'''
+"""ProfileSkill class"""
 
 from common_files.admin.active_tabular_inline import ActiveTabularInline
 from member_manager.models.profile_skill import ProfileSkill
 
+
 class ProfileSkillInline(ActiveTabularInline):
-    '''ProfileSkillInline inherits from ActiveTabularInline'''
+    """ProfileSkillInline inherits from ActiveTabularInline"""
 
     model = ProfileSkill
     extra = 1
