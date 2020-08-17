@@ -1,3 +1,11 @@
-from django.test import TestCase
+"""MemberManager tests"""
 
-# Create your tests here.
+from member_manager.tests.availability import AvailabilityTest
+from member_manager.tests.availability_form import AvailabilityFormTest
+from member_manager.tests.availability_inline_formset import (
+    AvailabilityInlineFormSetTest
+)
+from member_manager.tests.profile import ProfileTest
+from member_manager.tests.profile_skill import ProfileSkillTest
+from member_manager.tests.skill import SkillTest
+from member_manager.tests.utils import MemberManagerUtilsTest
