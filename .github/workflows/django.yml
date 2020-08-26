@@ -1,0 +1,36 @@
+name: Django CI
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
+    steps:
+    - name: Checkout develop
+      uses: actions/checkout@v2
+      with:
+        path: develop
+    - name: Checkout jwokaty/salt-django-vagrant
+      uses: actions/checkout@v2
+      with:
+        path: develop
+    - name: Make /srv
+      run: |
+        mkdir -p /srv/salt
+        mkdir -p /srv/pillar
+        cp -r salt-django-vagrant/salt/root /srv/salt
+        cp -r salt-django-vagrant/salt/pillar /srv/pillar
+        salt-call state.apply
+        source venv/bin/activate
+        cd project
+        python manage.py test member_manager.tests
