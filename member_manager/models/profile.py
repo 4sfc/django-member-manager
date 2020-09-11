@@ -19,7 +19,7 @@ class Profile(Timestamp):
     user = models.OneToOneField(User, blank=True, null=True,
                                 on_delete=models.CASCADE)
     joined = models.DateField(blank=True, null=True)
-    notes = models.TextField(blank=True)
+    free_response = models.TextField(blank=True)
 
     def __str__(self):
         return '{} {}'.format(self.first_name, self.last_name)
