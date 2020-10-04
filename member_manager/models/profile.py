@@ -18,7 +18,7 @@ class Profile(Timestamp):
                                         unique=True)
     active = models.BooleanField(default=True, null=False)
     user = models.OneToOneField(User, blank=True, null=True,
-                                on_delete=models.CASCADE)
+                                on_delete=models.SET_NULL)
     joined = models.DateField(blank=True, null=True)
     join_reason = models.TextField(blank=True, null=True)
     how_heard = models.ForeignKey(HowHeard, on_delete=models.SET_NULL,
