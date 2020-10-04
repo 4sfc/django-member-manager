@@ -13,8 +13,9 @@ class ProfileAdmin(TimestampAdmin):
     """ProfileAdmin shows profile, availability, and skill data"""
 
     fields = ['last_name', 'first_name', 'user', 'active', 'pronouns',
-              'email', 'phone', 'joined', 'free_response', 'created',
-              'created_by', 'modified', 'modified_by']
+              'email', 'phone', 'joined', 'join_reason', 'how_heard',
+              'how_heard_other', 'created', 'created_by', 'modified',
+              'modified_by']
     inlines = [AvailabilityInline, ProfileSkillInline]
     list_display = ['last_name', 'first_name', 'user', 'active', 'email',
                     'phone']
