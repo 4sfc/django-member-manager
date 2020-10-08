@@ -14,8 +14,8 @@ class Profile(Timestamp):
     last_name = models.CharField(db_index=True, max_length=191)
     pronouns = models.CharField(max_length=191, blank=True, null=True)
     email = models.EmailField(db_index=True, max_length=191, unique=True)
-    phone = models.PositiveIntegerField(help_text='Enter only numbers.',
-                                        unique=True)
+    phone = models.CharField(max_length=10, unique=True,
+                             help_text='Enter only numbers--e.g., 1234567890')
     active = models.BooleanField(default=True, null=False)
     user = models.OneToOneField(User, blank=True, null=True,
                                 on_delete=models.SET_NULL)
