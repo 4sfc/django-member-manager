@@ -17,6 +17,7 @@ class AvailabilityTest(TestCase):
         cls.profile = Profile.objects.create(first_name='foo',
                                              last_name='bar',
                                              email='foo@example.com',
+                                             phone='1234567890',
                                              user=cls.user,
                                              created_by=cls.user,
                                              modified_by=cls.user)
