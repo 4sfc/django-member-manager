@@ -18,6 +18,7 @@ class ProfileTest(TestCase):
         a_profile = Profile.objects.create(first_name='foo',
                                            last_name='bar',
                                            email='foo@example.com',
+                                           phone='1234567890',
                                            user=self.user,
                                            created_by=self.user,
                                            modified_by=self.user)
