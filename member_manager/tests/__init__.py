@@ -7,6 +7,7 @@ from member_manager.tests.availability_inline_formset import (
 )
 from member_manager.tests.page import PageTest
 from member_manager.tests.profile import ProfileTest
+from member_manager.tests.profile_add import ProfileAddViewTest
 from member_manager.tests.profile_form import ProfileFormTest
 from member_manager.tests.profile_skill import ProfileSkillTest
 from member_manager.tests.published import PublishedListFilterTest
