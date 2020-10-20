@@ -1,3 +1,3 @@
-from django.shortcuts import render
+"""MemberManager views"""
 
-# Create your views here.
+from member_manager.views.profile_add import ProfileAddView
