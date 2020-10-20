@@ -3,6 +3,7 @@
 from django.contrib.auth.models import AnonymousUser
 from django.test import RequestFactory, TestCase
 
+from member_manager.models.profile import Profile
 from member_manager.views.profile_add import ProfileAddView
 
 
@@ -25,4 +26,5 @@ class ProfileAddViewTest(TestCase):
         form_class = view_i.get_form_class()
         form = form_class(data=self.data)
         self.assertTrue(view_i.form_valid(form))
-        self.assertEqual(self.request.session['profile_id'], 1)
+        foo_profile = Profile.objects.get(email='fb@example.com')
+        self.assertEqual(self.request.session['profile_id'], foo_profile.id)
